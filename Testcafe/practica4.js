@@ -10,7 +10,7 @@ test('Probar checkboxes', async t =>{
         .click(page.baseCheckbox.nth(1))
 
     await t.expect(page.baseCheckbox.nth(1).checked).notOk()
-    await t.expect(page.baseCheckbox.nth(3).checked).notOk()
+    //await t.expect(page.baseCheckbox.nth(3).checked).notOk()
     //await t.expect(page.checkbox42.checked).notOk()
     
   
