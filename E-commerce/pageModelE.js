@@ -11,7 +11,8 @@ class Page{
         this.password_input = Selector('#passwd');
         this.firstName_Address = Selector('#firstname');
         this.lastName_Address = Selector('#lastname');
-        this.address = Selector('#address1')
+        this.address = Selector('#address1');
+        this.city = Selector('#city');
     }
 }
 export default new Page();

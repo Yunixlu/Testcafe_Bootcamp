@@ -1,10 +1,5 @@
 import page from './pageModelE.js';
-
-let rndNumber = Math.random().toString(36).substr(1,4);
-const email = 'dummy' + rndNumber + '@mailinator.com'
-const firstName = "Yunuen"
-const lastName = "Pa"
-const password = "88888"
+import { data } from './data';
 
 fixture('Pruebas de módulo mi cuenta')
     .page('http://automationpractice.com');
@@ -14,24 +9,31 @@ fixture('Pruebas de módulo mi cuenta')
 
         await t
             .click(page.signIn_link)
-            console.log("Correo", email)
+            console.log("Correo: ", data.email)
+            console.log("Firstname: ", data.firstName)
+            console.log("lastname: ", data.lastName)
 
         await t
-            .typeText(page.email_input, email)
+            .typeText(page.email_input, data.email)
             .click(page.createAccount_btn)
 
         await t
-            .expect(page.email_form.value).contains(email)
+            .expect(page.email_form.value).contains(data.email)
             .expect(page.email_form.hasAttribute('readonly')).notOk()
 
-            .typeText(page.firstName_input, firstName)
-            .typeText(page.lastName_input, lastName)
+            .typeText(page.firstName_input, data.firstName)
+            .typeText(page.lastName_input, data.lastName)
 
-            .expect(page.firstName_Address.value).contains(firstName)
-            .expect(page.lastName_Address.value).contains(lastName)
+            .expect(page.firstName_Address.value).contains(data.firstName)
+            .expect(page.lastName_Address.value).contains(data.lastName)
 
-            .typeText(page.password_input, password)
-            .typeText(page.address, "PO BOX 7867 ")
+            .typeText(page.password_input, data.password)
+
+            .typeText(page.address, data.address)
+            .expect(page.address.value).contains(data.address)
+
+            .typeText(page.city, data.city)
+            .expect(page.city.value).contains(data.city)
 
 
     });
