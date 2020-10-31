@@ -16,12 +16,14 @@ fixture('Pruebas de módulo mi cuenta')
         await t
             .typeText(page.email_input, data.email)
             .click(page.createAccount_btn)
+            //.takeScreenshot()
 
         await t
             .expect(page.email_form.value).contains(data.email)
             .expect(page.email_form.hasAttribute('readonly')).notOk()
 
             .typeText(page.firstName_input, data.firstName)
+            //.takeElementScreenshot(page.firstName_input)
             .typeText(page.lastName_input, data.lastName)
 
             .expect(page.firstName_Address.value).contains(data.firstName)
