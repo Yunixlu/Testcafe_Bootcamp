@@ -73,7 +73,7 @@ class Page {
 
     //Practica 11
     this.link11 = Selector('a').withText('Horizontal Slider');
-    this.slider = Selector('#content > div > div > input[type=range]');
+    this.slider11 = Selector('#content > div > div > input[type=range]'); 
 
     //Practica 12 - Slider
     this.checkboxTried = Selector('#tried-test-cafe');
